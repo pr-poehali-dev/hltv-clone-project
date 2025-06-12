@@ -24,8 +24,7 @@ const RankingsPage = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <BarChart3 className="w-6 h-6 text-primary" />
-                  Рейтинг команд HLTV
+                  Рейтинг команд epic league
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
