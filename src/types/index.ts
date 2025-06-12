@@ -70,3 +70,35 @@ export type Region =
   | "asia"
   | "oceania"
   | "south-america";
+
+export interface Notification {
+  id: string;
+  type: "match" | "news" | "transfer" | "achievement";
+  title: string;
+  message: string;
+  timestamp: Date;
+  isRead: boolean;
+  actionUrl?: string;
+  icon?: string;
+}
+
+export interface UserProfile {
+  id: string;
+  username: string;
+  email: string;
+  avatar: string;
+  favoriteTeams: string[];
+  notifications: boolean;
+  darkMode: boolean;
+  language: "ru" | "en";
+  joinDate: Date;
+}
+
+export interface SearchResult {
+  id: string;
+  type: "team" | "player" | "match" | "news" | "event";
+  title: string;
+  subtitle?: string;
+  image?: string;
+  url: string;
+}

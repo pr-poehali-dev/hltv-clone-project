@@ -1,7 +1,9 @@
-import { Search, User, Bell, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { useState } from "react";
+import SearchDropdown from "./SearchDropdown";
+import NotificationsDropdown from "./NotificationsDropdown";
+import UserDropdown from "./UserDropdown";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,31 +45,11 @@ const Header = () => {
           {/* Search and User Actions */}
           <div className="flex items-center space-x-4">
             <div className="hidden md:flex items-center space-x-2">
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
-                <Input
-                  type="search"
-                  placeholder="Поиск..."
-                  className="pl-10 w-64 bg-muted/50 border-muted"
-                />
-              </div>
+              <SearchDropdown />
             </div>
 
-            <Button
-              variant="ghost"
-              size="icon"
-              className="text-muted-foreground hover:text-foreground"
-            >
-              <Bell className="w-5 h-5" />
-            </Button>
-
-            <Button
-              variant="ghost"
-              size="icon"
-              className="text-muted-foreground hover:text-foreground"
-            >
-              <User className="w-5 h-5" />
-            </Button>
+            <NotificationsDropdown />
+            <UserDropdown />
 
             {/* Mobile Menu Button */}
             <Button
@@ -85,13 +67,8 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-border">
             <div className="flex flex-col space-y-3">
-              <div className="relative mb-4">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
-                <Input
-                  type="search"
-                  placeholder="Поиск..."
-                  className="pl-10 bg-muted/50 border-muted"
-                />
+              <div className="mb-4">
+                <SearchDropdown />
               </div>
               {navItems.map((item) => (
                 <a

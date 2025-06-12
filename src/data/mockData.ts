@@ -1,4 +1,11 @@
-import { Team, Match, NewsArticle, Event } from "@/types";
+import {
+  Team,
+  Match,
+  NewsArticle,
+  Event,
+  Notification,
+  UserProfile,
+} from "@/types";
 
 export const mockTeams: Team[] = [
   {
@@ -176,3 +183,59 @@ export const mockEvents: Event[] = [
     teams: mockTeams,
   },
 ];
+
+export const mockNotifications: Notification[] = [
+  {
+    id: "1",
+    type: "match",
+    title: "NAVI vs FaZe начался!",
+    message: "Ваш любимый матч начался. Не пропустите!",
+    timestamp: new Date(Date.now() - 5 * 60 * 1000),
+    isRead: false,
+    actionUrl: "/matches/1",
+    icon: "🔴",
+  },
+  {
+    id: "2",
+    type: "news",
+    title: "Новая статья",
+    message: "Интервью с s1mple о предстоящем турнире",
+    timestamp: new Date(Date.now() - 2 * 60 * 60 * 1000),
+    isRead: false,
+    actionUrl: "/news/4",
+    icon: "📰",
+  },
+  {
+    id: "3",
+    type: "transfer",
+    title: "Трансфер подтвержден",
+    message: "ZywOo официально переходит в G2",
+    timestamp: new Date(Date.now() - 6 * 60 * 60 * 1000),
+    isRead: true,
+    actionUrl: "/news/2",
+    icon: "🔄",
+  },
+  {
+    id: "4",
+    type: "achievement",
+    title: "Новый рекорд!",
+    message: "s1mple установил новый рекорд рейтинга",
+    timestamp: new Date(Date.now() - 24 * 60 * 60 * 1000),
+    isRead: true,
+    actionUrl: "/players/1",
+    icon: "🏆",
+  },
+];
+
+export const mockUserProfile: UserProfile = {
+  id: "user1",
+  username: "CSFan2024",
+  email: "user@example.com",
+  avatar:
+    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop",
+  favoriteTeams: ["1", "2"],
+  notifications: true,
+  darkMode: true,
+  language: "ru",
+  joinDate: new Date(2024, 0, 15),
+};
