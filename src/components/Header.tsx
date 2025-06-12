@@ -25,7 +25,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center space-x-4">
             <div className="font-oswald text-2xl font-bold text-primary">
-              CS<span className="text-foreground">PRO</span>
+              OBSIDIAN
             </div>
           </div>
 
